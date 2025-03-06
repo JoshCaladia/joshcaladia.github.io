@@ -7,14 +7,48 @@
 				font-family: bitter;
 				src: url(bitter.ttf);
 			}
-			html, body {
-				font-size: 20px;
+			html, body, button {
+				font-size: 18px;
+				font-kerning: normal;
 				font-family: bitter;
 				text-align: center;
-				max-width: 600px;
+				width: 600px;
+				padding: 0px;
+				margin: 0px;
+				border: 0px;
+				outline: 0px;
 			}
 			a {
 				color: inherit;
+			}
+			h2 {
+				font-weight: 900;
+				font-size: 1.25em;
+			}
+			iframe {
+				margin-top: 0px;
+				margin-bottom: 0px;
+				padding-top: 0px;
+				padding-bottom: 0px;
+				border-top: 0px;
+				border-bottom: 0px;
+			}
+
+			.collapsible {
+				background-color: #503AA8;
+				color: #E5D0FF;
+				cursor: pointer;
+				width: 100%;
+			}
+
+			.content {
+				background-color: #503AA8;
+				color: #E5D0FF;
+				max-height: 0;
+				padding-left: 12px;
+				padding-right: 12px;
+				overflow: hidden;
+				transition: max-height 0.25s ease-in-out;
 			}
 		</style>
 	</head>
@@ -37,22 +71,38 @@
 				<img src="logo.png" alt="Josh Caladia" width="480" height="80"> <!--480x80 is half of the original image resolution-->
 			</h1>
 		</div>
+		<button type="button" class="collapsible"><h2>Wibbly Series</h2></button>
+		<div class="content">
+			<p>
+				<iframe frameborder="0" src="https://itch.io/embed/2914734?border_width=0&amp;bg_color=503AA8&amp;fg_color=E5D0FF&amp;link_color=E5D0FF&amp;border_color=503AA8" width="550" height="165"></iframe>
+				<br>
+				<iframe frameborder="0" src="https://itch.io/embed/3028861?border_width=0&amp;bg_color=503AA8&amp;fg_color=E5D0FF&amp;link_color=E5D0FF&amp;border_color=503AA8" width="550" height="165"></iframe>
+				<br>
+				<iframe frameborder="0" src="https://itch.io/embed/3349013?border_width=0&amp;bg_color=503AA8&amp;fg_color=E5D0FF&amp;link_color=E5D0FF&amp;border_color=503AA8" width="550" height="165"></iframe>
+			</p>
+		</div>
+		<br>
+		<button type="button" class="collapsible"><h2>Other Projects</h2></button>
+		<div class="content">
+			<p>
+				this site's a work-in-progress so there ain't anything here at the moment sorry
+			</p>
+		</div>
 
-		<h2>
-			Wibbly Series
-		</h2>
-		<p>
-			<iframe frameborder="0" src="https://itch.io/embed/2914734?border_width=0&amp;bg_color=E5D0FF&amp;fg_color=000&amp;link_color=503AA8&amp;border_color=E5D0FF" width="550" height="165"></iframe>
-			<br>
-			<iframe frameborder="0" src="https://itch.io/embed/3028861?border_width=0&amp;bg_color=E5D0FF&amp;fg_color=000&amp;link_color=503AA8&amp;border_color=E5D0FF" width="550" height="165"></iframe>
-			<br>
-			<iframe frameborder="0" src="https://itch.io/embed/3349013?border_width=0&amp;bg_color=E5D0FF&amp;fg_color=000&amp;link_color=503AA8&amp;border_color=E5D0FF" width="550" height="165"></iframe>
-		</p>
-		<h2>
-			Other Projects
-		</h2>
-		<p>
-			this site's a work-in-progress so there ain't anything here at the moment sorry
-		</p>
+		<script>
+			var coll = document.getElementsByClassName("collapsible");
+			var i;
+			
+			for (i = 0; i < coll.length; i++) {
+			  coll[i].addEventListener("click", function() {
+				var content = this.nextElementSibling;
+				if (content.style.maxHeight){
+				  content.style.maxHeight = null;
+				} else {
+				  content.style.maxHeight = content.scrollHeight + "px";
+				}
+			  });
+			}
+		</script>
 	</body>
 </html>
