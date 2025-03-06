@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html style="background-color: #E5D0FF; margin: auto;">
+<html style="background-color: #E5D0FF;">
 	<head>
 		<meta http-equiv="pragma" content="no-cache"> <!--doesn't even work lol-->
 		<title>Josh Caladia</title>
@@ -15,11 +15,19 @@
 				text-align: center;
 				width: 600px;
 				padding: 0;
-				margin: 0;
+				margin: 0 auto;
 				border: 0;
 				outline: 0;
 				white-space: 0;
+				display: block;
 			}
+			/* p {
+				padding: 6px;
+				margin: 6px;
+				border: 6px;
+				outline: 6px;
+				white-space: 6px;
+			} */
 			a {
 				color: inherit;
 			}
@@ -31,7 +39,7 @@
 				display: block;
 				margin: 0 auto;
 				padding: 0;
-				border: 0 auto;
+				border: 0;
 			}
 
 			.collapsible {
@@ -44,17 +52,16 @@
 			.content {
 				background-color: #503AA8;
 				color: #E5D0FF;
-				max-height: 0;
 				padding: 0;
 				overflow: hidden;
-				transition: max-height 125ms ease-in-out;
+				display: none;
 			}
 		</style>
 	</head>
 
 	<body>
 		<div id="header" style="color:#503AA8">
-			<links style="font-size: 0.8em; font-weight:800;">
+			<links style="font-size: 14px; font-weight:800;">
 				<a href="https://josh.caladia.dev">bluesky</a>
 				 | 
 				<a href="https://joshcaladia.itch.io">itch.io</a>
@@ -70,6 +77,8 @@
 				<img src="logo.png" alt="Josh Caladia" width="480" height="80"> <!--480x80 is half of the original image resolution-->
 			</h1>
 		</div>
+
+		<p>hi welcome to my VERY work-in-progress website, here are some projects i've worked on:</p>
 		<!-- <p><h1>Projects</h1></p> -->
 		<button type="button" class="collapsible"><h2>Wibbly Series</h2></button>
 		<div class="content">
@@ -83,24 +92,38 @@
 		<button type="button" class="collapsible"><h2>Other Projects</h2></button>
 		<div class="content">
 			<p>
-				this site's a work-in-progress so there ain't anything here at the moment sorry
+				i'm still working on this hang on
 			</p>
 		</div>
 
 		<script>
 			var coll = document.getElementsByClassName("collapsible");
 			var i;
-			
+
 			for (i = 0; i < coll.length; i++) {
-			  coll[i].addEventListener("click", function() {
+			coll[i].addEventListener("click", function() {
 				var content = this.nextElementSibling;
-				if (content.style.maxHeight){
-				  content.style.maxHeight = null;
+				if (content.style.display === "block") {
+				content.style.display = "none";
 				} else {
-				  content.style.maxHeight = content.scrollHeight + "px";
+				content.style.display = "block";
 				}
-			  });
-			}
+			});
+			} 
 		</script>
+
+		<div id="footer" style="color:#503AA8;">
+			<p><links style="font-size: 14px; font-weight:800;">
+				<a href="https://josh.caladia.dev">bluesky</a>
+				 | 
+				<a href="https://joshcaladia.itch.io">itch.io</a>
+				 | 
+				<a href="https://open.spotify.com/artist/428wAVR5Z5JYxXdDzoPSiy">spotify</a>
+				 | 
+				<a href="https://caladia.bandcamp.com">bandcamp</a>
+				 | 
+				<a href="https://linktr.ee/joshcaladia">more links</a>
+			</links></p>
+		</div>
 	</body>
 </html>
