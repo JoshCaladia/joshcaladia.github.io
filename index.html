@@ -22,14 +22,15 @@
 				outline: 0;
 				white-space: 0;
 				display: block;
+				image-rendering: pixelated;
 			}
-			/* p {
-				padding: 6px;
-				margin: 6px;
-				border: 6px;
-				outline: 6px;
-				white-space: 6px;
-			} */
+			button {
+				background-image: linear-gradient(#835acf, #503AA8);
+				border: 4px;
+				border-style: solid;
+				border-color: #503AA8;
+				border-top-color: #ca90ee;
+			}
 			a {
 				color: inherit;
 			}
@@ -54,9 +55,9 @@
 			.content {
 				background-color: #503AA8;
 				color: #E5D0FF;
-				padding: 0;
 				overflow: hidden;
-				display: none;
+				max-height: 0;
+				transition: max-height 0.125s ease;
 			}
 		</style>
 	</head>
@@ -103,14 +104,14 @@
 			var i;
 
 			for (i = 0; i < coll.length; i++) {
-			coll[i].addEventListener("click", function() {
-				var content = this.nextElementSibling;
-				if (content.style.display === "block") {
-				content.style.display = "none";
-				} else {
-				content.style.display = "block";
-				}
-			});
+				coll[i].addEventListener("click", function() {
+					var content = this.nextElementSibling;
+					if (content.style.maxHeight) {
+						content.style.maxHeight = null;
+					} else {
+						content.style.maxHeight = content.scrollHeight + "px";
+					}
+				});
 			} 
 		</script>
 
