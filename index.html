@@ -19,7 +19,6 @@
 				padding: 0;
 				margin: 0 auto;
 				border: 0;
-				outline: 0;
 				white-space: 0;
 				display: block;
 				image-rendering: pixelated;
@@ -50,18 +49,29 @@
 				color: #E5D0FF;
 				font-variant: small-caps;
 				width: 96%;
-				transition: color 0.125s ease, border-top-color 0.125s ease, border-color 0.125s ease;
+				transition: color 0.125s ease, border-top-color 0.125s ease, border-color 0.125s ease, letter-spacing 0.125s ease;
 			}
 
-			.active, .accordian:hover, .accordian:focus {
+			.active, .accordian:hover {
 				/* letter-spacing: 0.5em; */
 				color: #FFF;
 				border-color: #503AA8;
 				border-top-color: #df9ff6;
 			}
+			
+			.accordian:hover {
+				letter-spacing: 0.0625em;
+			}
+
+			.accordian:focus-visible{
+				outline-style: double;
+				outline-width: 4px;
+				outline-color: #503AA8;
+			}
 
 			.accordian:active {
 				background-image: linear-gradient(#9e65e4, #503AA8);
+				letter-spacing: -0.0625em;
 			}
 
 			.content {
