@@ -10,6 +10,10 @@
 				font-family: bitter;
 				src: url(bitter.ttf);
 			}
+			@font-face {
+				font-family: firacode;
+				src: url(firacode.ttf);
+			}
 			html, body, button {
 				font-size: 18px;
 				font-kerning: normal;
@@ -49,28 +53,40 @@
 				color: #E5D0FF;
 				font-variant: small-caps;
 				width: 96%;
-				transition: color 0.125s ease, border-top-color 0.125s ease, border-color 0.125s ease, letter-spacing 0.125s ease;
+				transition: color 0.125s ease, border-top-color 0.125s ease, border-color 0.125s ease, letter-spacing 0.125s ease, font-size 0.125s ease;
 			}
 
 			.active, .accordian:hover, .accordian:focus-visible {
-				/* letter-spacing: 0.5em; */
-				color: #FFF;
 				border-color: #503AA8;
 				border-top-color: #df9ff6;
 			}
 
-			.active {
+			.accordian:hover, .accordian:focus-visible {
 				letter-spacing: 0.0625em;
+				color: #FFF;
 			}
 
-			.accordian:focus-visible {
+			.active {
+				font-size: 1.5em;
+			}
+
+			:focus-visible:not(.active) {
 				outline-style: double;
 				outline-width: 4px;
 				outline-color: #503AA8;
 			}
+			
+			:focus-visible.accordian{
+				background-image: linear-gradient(#9e65e4, #503AA8);
+			}
+
+			:focus-visible.active {
+				outline-style: none;
+				outline-width: 4px;
+				outline-color: #503aa8;
+			}
 
 			.accordian:active {
-				background-image: linear-gradient(#9e65e4, #503AA8);
 				/* letter-spacing: -0.0625em; */
 			}
 
@@ -118,7 +134,7 @@
 		<br>
 		<button type="button" class="accordian"><h2>Other Projects</h2></button>
 		<div class="content">
-			<p>
+			<p style="font-family: firacode;">
 				i'm still working on this hang on
 			</p>
 		</div>
