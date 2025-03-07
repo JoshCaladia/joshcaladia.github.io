@@ -30,6 +30,7 @@
 				border-style: solid;
 				border-color: #503AA8;
 				border-top-color: #ca90ee;
+				cursor: pointer;
 			}
 			a {
 				color: inherit;
@@ -48,8 +49,14 @@
 			.collapsible {
 				background-color: #503AA8;
 				color: #E5D0FF;
-				cursor: pointer;
+				font-variant: small-caps;
 				width: 96%;
+				transition: color 0.125s ease;
+			}
+
+			.active {
+				/* letter-spacing: 0.5em; */
+				color: #FFF;
 			}
 
 			.content {
@@ -107,11 +114,14 @@
 
 			for (i = 0; i < coll.length; i++) {
 				coll[i].addEventListener("click", function() {
+					this.classList.toggle("active");
 					var content = this.nextElementSibling;
 					if (content.style.maxHeight) {
 						content.style.maxHeight = null;
+						this.style.color = null;
 					} else {
 						content.style.maxHeight = content.scrollHeight + "px";
+						this.style.color = "#FFF";
 					}
 				});
 			} 
