@@ -25,11 +25,6 @@
 				image-rendering: pixelated;
 			}
 			button {
-				background-image: linear-gradient(#835acf, #503AA8);
-				border: 4px;
-				border-style: solid;
-				border-color: #503AA8;
-				border-top-color: #ca90ee;
 				cursor: pointer;
 			}
 			a {
@@ -46,17 +41,23 @@
 				border: 0;
 			}
 
-			.collapsible {
-				background-color: #503AA8;
+			.accordian {
+				background-image: linear-gradient(#835acf, #503AA8);
+				border: 4px;
+				border-style: solid;
+				border-color: #342b8d;
+				border-top-color: #ca90ee;
 				color: #E5D0FF;
 				font-variant: small-caps;
 				width: 96%;
-				transition: color 0.125s ease;
+				transition: color 0.125s ease, border-top-color 0.125s ease, border-color 0.125s ease;
 			}
 
-			.active {
+			.active, .accordian:hover {
 				/* letter-spacing: 0.5em; */
 				color: #FFF;
+				border-color: #503AA8;
+				border-top-color: #df9ff6;
 			}
 
 			.content {
@@ -92,7 +93,7 @@
 
 		<p>hi welcome to my VERY work-in-progress website, here are some projects i've worked on:</p>
 		<!-- <p><h1>Projects</h1></p> -->
-		<button type="button" class="collapsible"><h2>Wibbly Series</h2></button>
+		<button type="button" class="accordian"><h2>Wibbly Series</h2></button>
 		<div class="content">
 			<p>
 				<iframe frameborder="0" src="https://itch.io/embed/2914734?border_width=0&amp;bg_color=503AA8&amp;fg_color=E5D0FF&amp;link_color=E5D0FF&amp;border_color=503AA8" width="550" height="165"></iframe>
@@ -101,7 +102,7 @@
 			</p>
 		</div>
 		<br>
-		<button type="button" class="collapsible"><h2>Other Projects</h2></button>
+		<button type="button" class="accordian"><h2>Other Projects</h2></button>
 		<div class="content">
 			<p>
 				i'm still working on this hang on
@@ -109,7 +110,7 @@
 		</div>
 
 		<script>
-			var coll = document.getElementsByClassName("collapsible");
+			var coll = document.getElementsByClassName("accordian");
 			var i;
 
 			for (i = 0; i < coll.length; i++) {
