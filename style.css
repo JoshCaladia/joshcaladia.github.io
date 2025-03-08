@@ -44,16 +44,16 @@ h2 {
 	border-color: #342b8d;
 	border-top-color: #ca90ee;
 	color: #E5D0FF;
-	background-image: linear-gradient(#835acf, #503AA8);
+	background: linear-gradient(#835acf, #503AA8) no-repeat;
 	font-variant: small-caps;
 	width: 96%;
-	transition: color 0.125s ease, border-top-color 0.125s ease, border-color 0.125s ease, letter-spacing 0.125s ease, font-size 0.125s ease;
+	transition: color 0.125s ease, border-top-color 0.125s ease, border-color 0.125s ease, letter-spacing 0.125s ease, font-size 0.125s ease, background 0.125s ease;
 }
 .accordian:hover, .accordian:focus-visible {
 	border-color: #503AA8;
 	border-top-color: #df9ff6;
 	color: #FFF;
-	background-image: linear-gradient(#9e65e4, #503AA8);
+	background: linear-gradient(#9e65e4, #503AA8) no-repeat;
 	letter-spacing: 0.0625rem;
 }
 .open {
@@ -68,33 +68,33 @@ h2 {
 	border-color: #338d2b;
 	border-top-color: #d8ee90;
 	color: #f5ffd0;
-	background-image: linear-gradient(#a2cf5a, #54a83a);
+	background: linear-gradient(#a2cf5a, #54a83a) no-repeat;
 	width: 90%;
-	transition: color 0.125s ease, border-top-color 0.125s ease, border-color 0.125s ease, letter-spacing 0.125s ease, font-size 0.125s ease;
+	transition: color 0.125s ease, border-top-color 0.125s ease, border-color 0.125s ease, letter-spacing 0.125s ease, font-size 0.125s ease, background 0.125s ease;
 	font-family: fira-code;
 	font-weight: 900;
-	padding: 0.6rem;
+	padding: 0.3rem;
 }
 #green_button:hover, #green_button:focus-visible {
 	border-color: #54a83a;
 	border-top-color: #edf69f;
 	color: #FFF;
-	background-image: linear-gradient(#d1e465, #54a83a);
+	background: linear-gradient(#d1e465, #54a83a) no-repeat;
 	letter-spacing: 0.0625rem;
 }
 :focus-visible:not(.open), a:focus {
 	outline-style: double;
-	outline-width: 0.75%;
+	outline-width: 0.25rem;
 	outline-color: #503AA8;
 }
 #green_button:focus-visible:not(.open) {
 	outline-style: double;
-	outline-width: 0.75%;
+	outline-width: 0.25rem;
 	outline-color: #54a83a;
 }
 :focus-visible.open {
 	outline-style: none;
-	outline-width: 0.75%;
+	outline-width: 0.25rem;
 	outline-color: #503aa8;
 }
 .accordian:active {
