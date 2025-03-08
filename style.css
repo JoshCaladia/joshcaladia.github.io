@@ -118,7 +118,8 @@ h2 {
     border-color: #342b8d;
     border-bottom-color: #835acf;
     color: #E5D0FF;
-    width: 92%;
+    width: 85%;
     padding: 12px 0;
+    padding-inline: 12px;
     margin: 0 auto;
 }
