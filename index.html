@@ -1,110 +1,130 @@
 <!DOCTYPE html>
-<html style="background-color: #E5D0FF;">
+<html style="background-color: #E5D0FF; max-width: 600px;">
 	<head>
-		<meta http-equiv="pragma" content="no-cache"> <!--doesn't even work lol-->
 		<title>Josh Caladia</title>
 		<meta name="description" content="Josh Caladia's very cool website">
-		<meta name="viewport" content="initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="ios" content="fuck you">
+		<meta http-equiv="pragma" content="no-cache"> <!--doesn't even work lol-->
 		<style>
 			@font-face {
 				font-family: bitter;
 				src: url(bitter.ttf);
 			}
 			@font-face {
-				font-family: firacode;
-				src: url(firacode.ttf);
+				font-family: fira-code;
+				src: url(fira_code.ttf);
 			}
-			html, body, button {
-				font-size: 18px;
-				font-kerning: normal;
+			html, body, button, iframe {
+				font-size: 16pt;
 				font-family: bitter;
 				text-align: center;
-				width: 600px;
-				padding: 0;
 				margin: 0 auto;
+				padding: 0;
 				border: 0;
 				white-space: 0;
 				display: block;
 				image-rendering: pixelated;
+			}
+			img {
+				vertical-align: middle;
 			}
 			button {
 				cursor: pointer;
 			}
 			a {
 				color: inherit;
+				text-decoration: none;
+			}
+			a:hover {
+				text-decoration: underline;
+			}
+			#header, #footer {
+				color: #503AA8;
 			}
 			h2 {
 				font-weight: 900;
 				font-size: 1.25em;
 			}
-			iframe {
-				display: block;
-				margin: 0 auto;
-				padding: 0;
-				border: 0;
-			}
-
 			.accordian {
-				background-image: linear-gradient(#835acf, #503AA8);
-				border: 4px;
+				margin: 12px auto 0;
+				border: 8px;
 				border-style: solid;
 				border-color: #342b8d;
 				border-top-color: #ca90ee;
 				color: #E5D0FF;
+				background-image: linear-gradient(#835acf, #503AA8);
 				font-variant: small-caps;
 				width: 96%;
 				transition: color 0.125s ease, border-top-color 0.125s ease, border-color 0.125s ease, letter-spacing 0.125s ease, font-size 0.125s ease;
 			}
-
-			.open, .accordian:hover, .accordian:focus-visible {
+			.accordian:hover, .accordian:focus-visible {
+				border-color: #503AA8;
+				border-top-color: #df9ff6;
+				color: #FFF;
+				background-image: linear-gradient(#9e65e4, #503AA8);
+				letter-spacing: 0.0625em;
+			}
+			.open {
+				font-size: 1.25em;
 				border-color: #503AA8;
 				border-top-color: #df9ff6;
 			}
-
-			.accordian:hover, .accordian:focus-visible {
-				letter-spacing: 0.0625em;
+			#green_button {
+				margin: 12px auto 0;
+				border: 8px;
+				border-style: solid;
+				border-color: #338d2b;
+				border-top-color: #d8ee90;
+				color: #f5ffd0;
+				background-image: linear-gradient(#a2cf5a, #54a83a);
+				width: 92%;
+				transition: color 0.125s ease, border-top-color 0.125s ease, border-color 0.125s ease, letter-spacing 0.125s ease, font-size 0.125s ease;
+				font-family: fira-code;
+				font-weight: 900;
+				padding: 12px;
+			}
+			#green_button:hover, #green_button:focus-visible {
+				border-color: #54a83a;
+				border-top-color: #edf69f;
 				color: #FFF;
+				background-image: linear-gradient(#d1e465, #54a83a);
+				letter-spacing: 0.0625em;
 			}
-
-			.open {
-				font-size: 1.25em;
-			}
-
-			:focus-visible:not(.open) {
+			:focus-visible:not(.open), a:focus {
 				outline-style: double;
 				outline-width: 4px;
 				outline-color: #503AA8;
 			}
-			
-			.accordian:focus-visible, .accordian:hover {
-				background-image: linear-gradient(#9e65e4, #503AA8);
-			}
-
 			:focus-visible.open {
 				outline-style: none;
 				outline-width: 4px;
 				outline-color: #503aa8;
 			}
-
 			.accordian:active {
-				/* letter-spacing: -0.0625em; */
+				display: block; /* tmp */
 			}
-
 			.content {
 				background-color: #503AA8;
 				color: #E5D0FF;
 				overflow: hidden;
 				max-height: 0;
-				transition: max-height 0.125s ease;
 				margin: 0 auto;
-				width: 96%;
+				padding-bottom: 0;
+				width: 96%; /* 12 pixels on either side of 600 */
+				transition: max-height 0.125s ease, padding-bottom 0.125s ease;
+			}
+			#box-text {
+				font-family: fira-code;
+				padding: 0 24px;
+				margin: 0;
 			}
 		</style>
 	</head>
 
 	<body>
-		<div id="header" style="color:#503AA8">
-			<links style="font-size: 14px; font-weight:800;">
+		<div id="header">
+			<p style="font-size: 0.8em; font-weight:800; margin: 0;">
 				<a href="https://josh.caladia.dev" target="_blank">bluesky</a>
 				 | 
 				<a href="https://joshcaladia.itch.io" target="_blank">itch.io</a>
@@ -114,50 +134,51 @@
 				<a href="https://caladia.bandcamp.com" target="_blank">bandcamp</a>
 				 | 
 				<a href="https://linktr.ee/joshcaladia" target="_blank">more links</a>
-			</links>
+			</p>
 
 			<h1>
-				<img src="logo.png" alt="Josh Caladia" width="480" height="80"> <!--480x80 is half of the original image resolution-->
+				<img src="logo.png" alt="Josh Caladia" width=80%> <!--480x80 is half of the original image resolution-->
 			</h1>
 		</div>
 
 		<p>hi welcome to my VERY work-in-progress website, here are some projects i've worked on:</p>
-		<!-- <p><h1>Projects</h1></p> -->
-		<button type="button" class="accordian"><h2>Wibbly Series</h2></button>
+		
+		<button class="accordian"><h2>Wibbly Series</h2></button>
 		<div class="content">
-			<p>
-				<iframe frameborder="0" src="https://itch.io/embed/2914734?border_width=0&amp;bg_color=503AA8&amp;fg_color=E5D0FF&amp;link_color=E5D0FF&amp;border_color=503AA8" width="550" height="165"></iframe>
-				<iframe frameborder="0" src="https://itch.io/embed/3028861?border_width=0&amp;bg_color=503AA8&amp;fg_color=E5D0FF&amp;link_color=E5D0FF&amp;border_color=503AA8" width="550" height="165"></iframe>
-				<iframe frameborder="0" src="https://itch.io/embed/3349013?border_width=0&amp;bg_color=503AA8&amp;fg_color=E5D0FF&amp;link_color=E5D0FF&amp;border_color=503AA8" width="550" height="165"></iframe>
+			<p id="box-text">
+				for the WibblyPibblyDibbly games, i'm secondary programmer and co-lead developer. i also provide some art and all the music.
 			</p>
+			<button id="green_button" onclick="window.open('https://comicnight.itch.io/wibbly')"><img src="icons/wibbly_1.png" width=10%> Winter Rollout <img src="icons/wibbly_1.png" width=10%></button>
+			<button id="green_button" onclick="window.open('https://comicnight.itch.io/wibblymotor')"><img src="icons/wibbly_2.png" width=10%> Motor School <img src="icons/wibbly_2.png" width=10%></button>
+			<button id="green_button" onclick="window.open('https://comicnight.itch.io/wibbly-treasure-hunt')"><img src="icons/wibbly_3.png" width=10%> Treasure Hunt <img src="icons/wibbly_3.png" width=10%></button>
 		</div>
-		<br>
-		<button type="button" class="accordian"><h2>Other Projects</h2></button>
+		<button class="accordian"><h2>Other Projects</h2></button>
 		<div class="content">
-			<p style="font-family: firacode;">
+			<p id="box-text">
 				i'm still working on this hang on
 			</p>
 		</div>
-
+		
 		<script>
-			var coll = document.getElementsByClassName("accordian");
-			var i;
-
-			for (i = 0; i < coll.length; i++) {
-				coll[i].addEventListener("click", function() {
+			const acco = document.getElementsByClassName("accordian");
+			for (var i = 0; i < acco.length; i++) {
+				var content
+				acco[i].addEventListener("click", function() {
+					content = this.nextElementSibling;
 					this.classList.toggle("open");
-					var content = this.nextElementSibling;
 					if (content.style.maxHeight) {
 						content.style.maxHeight = null;
+						content.style.paddingBottom = 0;
 					} else {
 						content.style.maxHeight = content.scrollHeight + "px";
+						content.style.paddingBottom = 24 + "px";
 					}
 				});
-			} 
+			}
 		</script>
 
-		<div id="footer" style="color:#503AA8;">
-			<p><links style="font-size: 14px; font-weight:800;">
+		<div id="footer">
+			<p style="font-size: 0.8em; font-weight:800;">
 				<a href="https://josh.caladia.dev" target="_blank">bluesky</a>
 				 | 
 				<a href="https://joshcaladia.itch.io" target="_blank">itch.io</a>
@@ -167,7 +188,7 @@
 				<a href="https://caladia.bandcamp.com" target="_blank">bandcamp</a>
 				 | 
 				<a href="https://linktr.ee/joshcaladia" target="_blank">more links</a>
-			</links></p>
+			</p>
 		</div>
 	</body>
 </html>
