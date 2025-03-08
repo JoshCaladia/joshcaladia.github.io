@@ -47,7 +47,7 @@ h2 {
 	background: linear-gradient(#835acf, #503AA8) no-repeat;
 	font-variant: small-caps;
 	width: 96%;
-	transition: color 0.125s ease, border-top-color 0.125s ease, border-color 0.125s ease, letter-spacing 0.125s ease, font-size 0.125s ease, background 0.125s ease;
+	transition: color 0.125s ease, letter-spacing 0.125s ease, font-size 0.125s ease;
 }
 .accordian:hover, .accordian:focus-visible {
 	border-color: #503AA8;
@@ -70,7 +70,7 @@ h2 {
 	color: #f5ffd0;
 	background: linear-gradient(#a2cf5a, #54a83a) no-repeat;
 	width: 90%;
-	transition: color 0.125s ease, border-top-color 0.125s ease, border-color 0.125s ease, letter-spacing 0.125s ease, font-size 0.125s ease, background 0.125s ease;
+	transition: color 0.125s ease, letter-spacing 0.125s ease, font-size 0.125s ease;
 	font-family: fira-code;
 	font-weight: 900;
 	padding: 0.3rem;
