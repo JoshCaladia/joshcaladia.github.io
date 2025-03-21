@@ -101,7 +101,7 @@ h2 {
 	display: block; /* tmp */
 }
 .content {
-	background-color: #503AA8;
+	background: #503AA8;
 	color: #E5D0FF;
 	overflow: hidden; /* backup in case next line doesn't work */
 	overflow: -moz-hidden-unscrollable;
@@ -115,7 +115,7 @@ h2 {
 	font-family: fira-code;
 	border: 0.4rem;
 	border-style: solid;
-	background-color: #503AA8;
+	background: #503AA8;
 	border-color: #342b8d;
 	border-bottom-color: #835acf;
 	color: #E5D0FF;
